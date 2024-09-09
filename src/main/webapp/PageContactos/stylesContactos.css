@@ -1,0 +1,131 @@
+* {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F6F4F3;
+}
+
+/*Header Encabezado*/
+header {
+    background-color: #F6F4F3;
+    height: 85px;
+    width: 100%;
+    border-bottom: 1px solid;
+    padding: 5px;
+    position: sticky;
+    top: 0;
+}
+
+header .header-logo {
+    float: left;
+    margin-left: 40px;
+}
+
+header .header-logo img {
+    height: 70px;
+    width: auto;
+}
+
+header .nav-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 80px;
+    float: right;
+    margin-top: 25px;
+    margin-right: 80px;
+}
+
+header .nav-menu a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.1s ease-in-out;
+}
+
+header .nav-menu a:hover {
+    color: peru;
+    /*Bold más grueso*/
+    font-weight: 800;
+}
+
+/*Main Vista*/
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.contacto {
+    padding-bottom: 100px;
+    text-align: center;
+
+}
+
+.contacto h1 {
+    margin-top: 80px;
+    text-align: center;
+    margin-bottom: 30px;
+
+}
+
+.formulario {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.campo input,
+.campo textarea,
+.campo select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.campo input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+.campo input[type="submit"]:hover {
+    background-color: #555;
+}
+
+/*Footer*/
+
+footer {
+    background-color: #dcdcdc;
+    color: black;
+    text-align: center;
+    padding: 50px 0;
+    margin-top: 30px;
+}
+
+.footer-icon {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.footer-icon img {
+    width: 28px;
+    height: auto;
+}
