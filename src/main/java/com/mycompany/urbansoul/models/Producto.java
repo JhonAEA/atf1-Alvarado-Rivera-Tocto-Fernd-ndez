@@ -27,6 +27,8 @@ public class Producto implements Serializable {
     @Column(nullable = false)
     private Boolean activo;
 
+    
+    
     public Producto() {
     }
 

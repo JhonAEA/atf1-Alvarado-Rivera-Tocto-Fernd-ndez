@@ -19,10 +19,6 @@ public class Administrador implements Serializable {
     @Column(nullable = false)
     private String password;
 
-    // Relación con productos
-    @OneToMany(mappedBy = "administrador", cascade = CascadeType.ALL)
-    private List<Producto> productos;
-
     public Administrador() {
     }
 
@@ -30,7 +26,6 @@ public class Administrador implements Serializable {
         this.idAdmin = idAdmin;
         this.username = username;
         this.password = password;
-        this.productos = productos;
     }
 
     public Long getIdAdmin() {
@@ -56,15 +51,5 @@ public class Administrador implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    public List<Producto> getProductos() {
-        return productos;
-    }
-
-    public void setProductos(List<Producto> productos) {
-        this.productos = productos;
-    }
-    
-    
 
 }
