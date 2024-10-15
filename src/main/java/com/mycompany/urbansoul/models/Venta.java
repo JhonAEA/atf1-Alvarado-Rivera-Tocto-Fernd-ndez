@@ -6,15 +6,12 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "ventas")
 public class Venta implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idVenta;
 
-    @Column(nullable = false)
-    private String comprador;  // Se puede cambiar por una relación con otra entidad de Cliente
-    
     @Temporal(TemporalType.DATE)
     private Date fechaVenta;
 
@@ -24,16 +21,22 @@ public class Venta implements Serializable {
     @OneToMany(mappedBy = "venta", cascade = CascadeType.ALL)
     private List<DetalleVenta> detalles;
 
+    @ManyToOne
+    @JoinColumn(name = "idUsuario", nullable = false)
+    private Usuario usuario;
+
     public Venta() {
     }
 
-    public Venta(Long idVenta, String comprador, Date fechaVenta, Double total, List<DetalleVenta> detalles) {
+    public Venta(Long idVenta, String comprador, Date fechaVenta, Double total, List<DetalleVenta> detalles, Usuario usuario) {
         this.idVenta = idVenta;
-        this.comprador = comprador;
         this.fechaVenta = fechaVenta;
         this.total = total;
         this.detalles = detalles;
+        this.usuario = usuario;
     }
+
+    
 
     public Long getIdVenta() {
         return idVenta;
@@ -41,14 +44,6 @@ public class Venta implements Serializable {
 
     public void setIdVenta(Long idVenta) {
         this.idVenta = idVenta;
-    }
-
-    public String getComprador() {
-        return comprador;
-    }
-
-    public void setComprador(String comprador) {
-        this.comprador = comprador;
     }
 
     public Date getFechaVenta() {
@@ -74,6 +69,14 @@ public class Venta implements Serializable {
     public void setDetalles(List<DetalleVenta> detalles) {
         this.detalles = detalles;
     }
-    
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
     
 }

@@ -7,7 +7,6 @@ import java.util.List;
 
 
 @Entity
-@Table(name = "administradores")
 public class Administrador implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

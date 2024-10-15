@@ -5,7 +5,9 @@
 package com.mycompany.urbansoul.servlets;
 
 import com.mycompany.urbansoul.models.Contacto;
-import com.mycompany.urbansoul.models.Controlador;
+import com.mycompany.urbansoul.models.controladores.ControladorContacto;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -24,8 +26,15 @@ import java.util.List;
 @WebServlet(name = "SvContacto", urlPatterns = {"/SvContacto"})
 public class SvContacto extends HttpServlet {
 
-    Controlador control = new Controlador();
+    private EntityManagerFactory emf;
+    private ControladorContacto control;
 
+    @Override
+    public void init() throws ServletException {
+        // Inicializa el EntityManagerFactory una sola vez
+        emf = Persistence.createEntityManagerFactory("UrbanSoulPU");
+        control = new ControladorContacto(emf);
+    }
         
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -36,6 +45,8 @@ public class SvContacto extends HttpServlet {
         
         HttpSession misesion = request.getSession();
         misesion.setAttribute("listaContactos", listaContactos);
+        
+        response.sendRedirect("Contactos.jsp");
     }
 
     @Override
@@ -55,7 +66,7 @@ public class SvContacto extends HttpServlet {
         
         control.crearContacto(cont);
         
-        response.sendRedirect("PageContactos/Contactos.jsp");
+        response.sendRedirect("Contactos.jsp");
         
     }
 

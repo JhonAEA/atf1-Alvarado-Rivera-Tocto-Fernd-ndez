@@ -11,7 +11,6 @@ import jakarta.persistence.EntityManagerFactory;
 import java.io.Serializable;
 import jakarta.persistence.Query;
 import jakarta.persistence.EntityNotFoundException;
-import jakarta.persistence.Persistence;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
 import java.util.List;
@@ -21,7 +20,7 @@ import java.util.List;
  * @author USER
  */
 public class ContactoJpaController implements Serializable {
-
+    
     public ContactoJpaController(EntityManagerFactory emf) {
         this.emf = emf;
     }
@@ -29,10 +28,6 @@ public class ContactoJpaController implements Serializable {
 
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
-    }
-    
-    public ContactoJpaController() {
-        emf = Persistence.createEntityManagerFactory("UrbanSoulPU");
     }
     
 

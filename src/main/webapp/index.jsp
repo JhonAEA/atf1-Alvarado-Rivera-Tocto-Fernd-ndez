@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="stylesInicio.css" />
+  <link rel="stylesheet" href="css/stylesInicio.css" />
 </head>
 
 <body>
@@ -25,9 +25,9 @@
     </div>
     <nav class="nav-menu">
       <a href="#">Inicio</a>
-      <a href="PageNosotros/Nosotros.jsp">Nosotros</a>
-      <a href="PageProductos/Productos.jsp">Productos</a>
-      <a href="PageContactos/Contactos.jsp">Contacto</a>
+      <a href="Nosotros.jsp">Nosotros</a>
+      <a href="Productos.jsp">Productos</a>
+      <a href="Contactos.jsp">Contacto</a>
     </nav>
   </header>
 

@@ -2,6 +2,7 @@ package com.mycompany.urbansoul.models;
 
 import jakarta.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 public class Producto implements Serializable {
@@ -26,13 +27,16 @@ public class Producto implements Serializable {
 
     @Column(nullable = false)
     private Boolean activo;
+    
+    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL)
+    private List<DetalleVenta> detalles;
 
     
     
     public Producto() {
     }
 
-    public Producto(Long idProducto, String nombre, String descripcion, String talla, String color, Double precio, Boolean activo) {
+    public Producto(Long idProducto, String nombre, String descripcion, String talla, String color, Double precio, Boolean activo, List<DetalleVenta> detalles) {
         this.idProducto = idProducto;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -40,7 +44,10 @@ public class Producto implements Serializable {
         this.color = color;
         this.precio = precio;
         this.activo = activo;
+        this.detalles = detalles;
     }
+
+    
 
     public Long getIdProducto() {
         return idProducto;
@@ -96,6 +103,14 @@ public class Producto implements Serializable {
 
     public void setActivo(Boolean activo) {
         this.activo = activo;
+    }
+
+    public List<DetalleVenta> getDetalles() {
+        return detalles;
+    }
+
+    public void setDetalles(List<DetalleVenta> detalles) {
+        this.detalles = detalles;
     }
     
     }
