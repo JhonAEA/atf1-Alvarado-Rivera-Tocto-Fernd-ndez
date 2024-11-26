@@ -13,29 +13,30 @@ import java.util.List;
  */
 @Entity
 public class Usuario {
-     @Id
+
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idUsuario;
-    
+
     @Column(nullable = false, length = 100)
     private String nombre;
-    
+
     @Column(nullable = false, length = 100)
     private String apellido;
-    
+
     @Column(nullable = false, unique = true, length = 150)
     private String email;
-    
+
     @Column(nullable = false, length = 20)
     private String telefono;
-    
+
     @Column(nullable = false, length = 255)
     private String direccion;
-    
+
     @Column(nullable = false, length = 10)
     private String codigoPostal;
-    
-    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
+
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
     private List<Venta> ventas;
 
     public Usuario() {
@@ -115,6 +116,5 @@ public class Usuario {
     public void setVentas(List<Venta> ventas) {
         this.ventas = ventas;
     }
-    
-    
+
 }

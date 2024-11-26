@@ -102,7 +102,7 @@
             </div>
             <div class="footer-icon">
                 <a href="https://www.facebook.com/?locale=es_LA"><img src="images/logos/face.png" alt="Facebook"></a>
-                <a href=""><img src="../images/logos/correo.png" alt="Correo"></a>
+                <a href=""><img src="images/logos/correo.png" alt="Correo"></a>
                 <a href="https://www.instagram.com/urbansoul.pe/"><img src="images/logos/insta.png" alt="Instagram"></a>
                 <a href="https://web.whatsapp.com/"><img src="images/logos/wsp.png" alt="whatsapp"></a>
             </div>

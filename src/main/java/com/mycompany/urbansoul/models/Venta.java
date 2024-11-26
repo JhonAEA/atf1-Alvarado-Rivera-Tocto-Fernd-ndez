@@ -36,8 +36,6 @@ public class Venta implements Serializable {
         this.usuario = usuario;
     }
 
-    
-
     public Long getIdVenta() {
         return idVenta;
     }
@@ -78,5 +76,4 @@ public class Venta implements Serializable {
         this.usuario = usuario;
     }
 
-    
 }
