@@ -3,7 +3,8 @@
     Created on : 26 nov 2024, 13:56:14
     Author     : USER
 --%>
-
+<%@ page import="java.util.List" %>
+<%@ page import="com.mycompany.urbansoul.models.Producto" %> 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

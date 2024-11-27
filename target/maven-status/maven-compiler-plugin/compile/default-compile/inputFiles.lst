@@ -4,12 +4,14 @@ C:\Users\USER\Documents\NetBeansProjects\atf1-Alvarado-Rivera-Tocto-Fernd-ndez\s
 C:\Users\USER\Documents\NetBeansProjects\atf1-Alvarado-Rivera-Tocto-Fernd-ndez\src\main\java\com\mycompany\urbansoul\models\Usuario.java
 C:\Users\USER\Documents\NetBeansProjects\atf1-Alvarado-Rivera-Tocto-Fernd-ndez\src\main\java\com\mycompany\urbansoul\persistencia\exceptions\NonexistentEntityException.java
 C:\Users\USER\Documents\NetBeansProjects\atf1-Alvarado-Rivera-Tocto-Fernd-ndez\src\main\java\com\mycompany\urbansoul\models\controladores\ControladorContacto.java
+C:\Users\USER\Documents\NetBeansProjects\atf1-Alvarado-Rivera-Tocto-Fernd-ndez\src\main\java\com\mycompany\urbansoul\servlets\SvProducto.java
 C:\Users\USER\Documents\NetBeansProjects\atf1-Alvarado-Rivera-Tocto-Fernd-ndez\src\main\java\com\mycompany\urbansoul\models\Administrador.java
 C:\Users\USER\Documents\NetBeansProjects\atf1-Alvarado-Rivera-Tocto-Fernd-ndez\src\main\java\com\mycompany\urbansoul\persistencia\ContactoJpaController.java
 C:\Users\USER\Documents\NetBeansProjects\atf1-Alvarado-Rivera-Tocto-Fernd-ndez\src\main\java\com\mycompany\urbansoul\persistencia\AdministradorJpaController.java
 C:\Users\USER\Documents\NetBeansProjects\atf1-Alvarado-Rivera-Tocto-Fernd-ndez\src\main\java\com\mycompany\urbansoul\models\DetalleVenta.java
 C:\Users\USER\Documents\NetBeansProjects\atf1-Alvarado-Rivera-Tocto-Fernd-ndez\src\main\java\com\mycompany\urbansoul\models\Producto.java
 C:\Users\USER\Documents\NetBeansProjects\atf1-Alvarado-Rivera-Tocto-Fernd-ndez\src\main\java\com\mycompany\urbansoul\persistencia\VentaJpaController.java
+C:\Users\USER\Documents\NetBeansProjects\atf1-Alvarado-Rivera-Tocto-Fernd-ndez\src\main\java\com\mycompany\urbansoul\models\controladores\ControladorProducto.java
 C:\Users\USER\Documents\NetBeansProjects\atf1-Alvarado-Rivera-Tocto-Fernd-ndez\src\main\java\com\mycompany\urbansoul\models\Venta.java
 C:\Users\USER\Documents\NetBeansProjects\atf1-Alvarado-Rivera-Tocto-Fernd-ndez\src\main\java\com\mycompany\urbansoul\persistencia\DetalleVentaJpaController.java
 C:\Users\USER\Documents\NetBeansProjects\atf1-Alvarado-Rivera-Tocto-Fernd-ndez\src\main\java\com\mycompany\urbansoul\persistencia\ProductoJpaController.java

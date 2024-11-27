@@ -26,7 +26,10 @@ public class Producto implements Serializable {
     private Double precio;
 
     @Column(nullable = false)
-    private Boolean activo;
+    private String urlImagen;
+    
+    @Column(nullable = false)
+    private int activo;
     
     @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL)
     private List<DetalleVenta> detalles;
@@ -36,18 +39,26 @@ public class Producto implements Serializable {
     public Producto() {
     }
 
-    public Producto(Long idProducto, String nombre, String descripcion, String talla, String color, Double precio, Boolean activo, List<DetalleVenta> detalles) {
+    public Producto(Long idProducto, String nombre, String descripcion, String talla, String color, Double precio, String urlImagen, int activo, List<DetalleVenta> detalles) {
         this.idProducto = idProducto;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.talla = talla;
         this.color = color;
         this.precio = precio;
+        this.urlImagen = urlImagen;
         this.activo = activo;
         this.detalles = detalles;
     }
 
-    
+    public String getUrlImagen() {
+        return urlImagen;
+    }
+
+    public void setUrlImagen(String urlImagen) {
+        this.urlImagen = urlImagen;
+    }
+  
 
     public Long getIdProducto() {
         return idProducto;
@@ -97,11 +108,11 @@ public class Producto implements Serializable {
         this.precio = precio;
     }
 
-    public Boolean getActivo() {
+    public int getActivo() {
         return activo;
     }
 
-    public void setActivo(Boolean activo) {
+    public void setActivo(int activo) {
         this.activo = activo;
     }
 
