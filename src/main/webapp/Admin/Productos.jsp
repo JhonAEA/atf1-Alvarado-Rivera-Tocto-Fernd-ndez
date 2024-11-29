@@ -15,14 +15,14 @@
         <!-- NAV BAR -->
         <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">UrbanSoul Admin</a>
+                <a class="navbar-brand" href="Home.jsp">UrbanSoul Admin</a>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav nav-underline">
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="../index.jsp">Pagina Web</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="Productos.jsp">Productos</a>
+                            <a class="nav-link active" href="../SvProducto">Productos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="Contactos.jsp">Contactos</a>
@@ -40,13 +40,6 @@
 
 
         <div class="container-md">
-
-            <!-- Botón para ver productos -->
-            <form action="../SvProducto" method="GET" class="formulario">
-                <div class="campo">
-                    <input type="submit" id="verProductos" name="ver" value="Ver lista de productos" class="btn btn-primary">
-                </div>
-            </form>
 
             <table class="table align-middle">
                 <thead class="table-dark">
@@ -69,9 +62,7 @@
                         if (listaProductos == null || listaProductos.isEmpty()) {
         
                         } else {
-                    %>
-
-                    <%
+                        
                         for (Producto producto : listaProductos) {
                     %>
                     <tr>

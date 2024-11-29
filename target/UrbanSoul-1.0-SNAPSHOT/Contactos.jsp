@@ -1,11 +1,5 @@
-<%-- 
-    Document   : Contactos
-    Created on : Sep 8, 2024, 11:57:17 PM
-    Author     : USUARIO
---%>
 <%@ page import="java.util.List" %>
-<%@ page import="com.mycompany.urbansoul.models.Contacto" %> 
-
+<%@ page import="com.mycompany.urbansoul.models.Contacto" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -17,10 +11,13 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <link rel="stylesheet" href="css/stylesContactos.css">
     </head>
 
-    <body>
+    <body style="background-color: #F6F4F3">
+        <!-- Header -->
         <header>
             <div class="header-logo">
                 <img src="images/logos/logoUrbanSoul.png" alt="Urban Soul">
@@ -33,79 +30,83 @@
             </nav>
         </header>
 
-        <section class="contacto">
+        <!-- Sección de Contacto -->
+        <main class="py-5">
             <div class="container">
-                <h1>Contacto</h1>
-                <form action="SvContacto" method="POST" class="formulario">
-                    <div class="campo">
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" id="nombre" name="nombre" required>
+                <h1 class="text-center mb-4">¿Cómo contactarnos?</h1>
+                <div class="row">
+                    <!-- Formulario -->
+                    <div class="col-lg-6 ">
+                        <form action="SvContacto" method="POST" class="p-4 bg-white rounded shadow-sm" style="background-color: #F6F4F3">
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre:</label>
+                                <input type="text" id="nombre" name="nombre" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">E-mail:</label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="asunto" class="form-label">Asunto:</label>
+                                <select id="asunto" name="asunto" class="form-select" required>
+                                    <option value="" disabled selected>Selecciona un asunto</option>
+                                    <option value="Reclamo">Reclamo</option>
+                                    <option value="Sugerencia">Sugerencia</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="mensaje" class="form-label">Mensaje:</label>
+                                <textarea id="mensaje" name="mensaje" class="form-control" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Enviar</button>
+                        </form>
                     </div>
-                    <div class="campo">
-                        <label for="email">E-mail:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="campo">
-                        <label for="asunto">Asunto:</label>
-                        <select id="asunto" name="asunto" required>
-                            <option value="" disabled selected>Selecciona un asunto</option>
-                            <option value="Reclamo">Reclamo</option>
-                            <option value="Sugerencia">Sugerencia</option>
-                        </select>
-                    </div>
-                    <div class="campo">
-                        <label for="mensaje">Mensaje:</label>
-                        <textarea id="mensaje" name="mensaje" required></textarea>
-                    </div>
-                    <div class="campo">
-                        <input type="submit" id="registrar" name="registrar" value="Enviar">
-                    </div>
-                </form>
 
-                <form action="SvContacto" method="GET" class="formulario">
-                    <div class="campo">
-                        <input type="submit" id="registrar" name="Ver" value="Ver solicitudes de contacto">
+                    <!-- Ver solicitudes -->
+                    <div class="col-lg-6 mt-4 mt-lg-0">
+                        <p class="text-justify">
+                            En Urban Soul, tu opinión es muy importante para nosotros. Si tienes alguna pregunta, sugerencia o reclamo, no dudes en ponerte en contacto a través de los siguientes medios:
+                        </p>
+                        <ul class="list-unstyled">
+                            <li><strong>Correo electrónico:</strong> Puedes enviarnos un mensaje a <a href="mailto:contacto@urbansoul.com">contacto@urbansoul.com</a> para cualquier consulta relacionada con productos, pedidos o servicios.</li>
+                            <li><strong>Redes sociales:</strong> Estamos activos en nuestras redes sociales, como Facebook, Instagram y WhatsApp. Encuentra nuestros enlaces en la parte inferior de la página.</li>
+                            <li><strong>Formulario de contacto:</strong> Si prefieres hacerlo de manera más directa, puedes completar nuestro formulario de contacto, como lo estás haciendo ahora, para que nuestro equipo te responda a la brevedad.</li>
+                        </ul>
+                        <h6 class="mt-4">¿Por qué es importante contactarnos?</h6>
+                        <p class="text-justify">
+                            La comunicación con nuestros clientes es clave para ofrecer un servicio excepcional. Al recibir tus comentarios, sugerencias o reclamos, podemos mejorar nuestros productos y la experiencia de compra. Además, esto nos permite mantenernos conectados y comprometidos con nuestra comunidad, lo que nos motiva a seguir ofreciendo lo mejor de nosotros.
+                        </p>
+                        <p class="text-justify">
+                            Nos interesa saber tu opinión para seguir creciendo y brindar un servicio más cercano y adaptado a tus necesidades. ¡Tu voz hace la diferencia!
+                        </p>
                     </div>
-                    <%
-                        List<Contacto> listaContactos = (List) request.getSession().getAttribute("listaContactos");
-                        int cont = 1;
-                        if (listaContactos == null) {
-                        
-                        } else {
-                    %>
-                    
-                        <h1>Lista de contactos</h1>
-                    
-                    <%
-                            for(Contacto contacto : listaContactos){
-                    %>
-                    
-
-                    <h2>Numero de contacto N° <%=cont%></h2>
-                    <p>Nombre: <%=contacto.getNombre()%></p>
-                    <p>E-mail: <%=contacto.getEmail()%></p>
-                    <p>Asunto: <%=contacto.getAsunto()%></p>
-                    <p>Mensaje: <%=contacto.getMensaje()%></p>
-
-                    <%}
-                    }
-                    %>
-                </form>
-
-
+                </div>
             </div>
-        </section>
+        </main>
 
-        <footer>
-            <div class="footer-container">
-                <p>&copy; 2024 Urban Soul.</p>
-            </div>
-            <div class="footer-icon">
-                <a href="https://www.facebook.com/?locale=es_LA"><img src="images/logos/face.png" alt="Facebook"></a>
-                <a href=""><img src="images/logos/correo.png" alt="Correo"></a>
-                <a href="https://www.instagram.com/urbansoul.pe/"><img src="images/logos/insta.png" alt="Instagram"></a>
-                <a href="https://web.whatsapp.com/"><img src="images/logos/wsp.png" alt="Whatsapp"></a>
-                <a href="Admin/Productos.jsp"><img src="images/logos/admin.png" alt="Admin"></a>
+        <!-- Footer -->
+        <footer class="text-light py-4">
+            <div class="container text-center">
+                <!-- Texto del footer -->
+                <p class="mb-3" style="color: black">&copy; 2024 Urban Soul. Todos los derechos reservados.</p>
+                <!-- Iconos del footer -->
+                <div class="d-flex justify-content-center gap-4">
+                    <a href="https://www.facebook.com/?locale=es_LA">
+                        <img src="images/logos/face.png" alt="Facebook" class="img-fluid" style="width: 40px;">
+                    </a>
+                    <a href="#">
+                        <img src="images/logos/correo.png" alt="Correo" class="img-fluid" style="width: 40px;">
+                    </a>
+                    <a href="https://www.instagram.com/urbansoul.pe/">
+                        <img src="images/logos/insta.png" alt="Instagram" class="img-fluid" style="width: 40px;">
+                    </a>
+                    <a href="https://web.whatsapp.com/">
+                        <img src="images/logos/wsp.png" alt="Whatsapp" class="img-fluid" style="width: 40px;">
+                    </a>
+                    <a href="Admin/Home.jsp">
+                        <img src="images/logos/admin.png" alt="Admin" class="img-fluid" style="width: 40px;">
+                    </a>
+                </div>
             </div>
         </footer>
 

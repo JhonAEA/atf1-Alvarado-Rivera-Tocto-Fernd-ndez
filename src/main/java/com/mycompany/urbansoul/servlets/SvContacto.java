@@ -46,7 +46,7 @@ public class SvContacto extends HttpServlet {
         HttpSession misesion = request.getSession();
         misesion.setAttribute("listaContactos", listaContactos);
         
-        response.sendRedirect("Contactos.jsp");
+        response.sendRedirect("Admin/Contactos.jsp");
     }
 
     @Override
