@@ -26,7 +26,7 @@
                             <a class="nav-link" href="../SvContacto">Contactos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Ventas.jsp">Ventas</a>
+                            <a class="nav-link" href="../SvComprarProducto">Ventas</a>
                         </li>
                     </ul>
                 </div>
@@ -90,7 +90,7 @@
                             </p>
                         </div>
                         <div class="card-footer text-center">
-                            <a href="Ventas.jsp" class="btn btn-primary">Ir a Ventas</a>
+                            <a href="../SvComprarProducto" class="btn btn-primary">Ir a Ventas</a>
                         </div>
                     </div>
                 </div>

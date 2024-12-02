@@ -5,6 +5,7 @@
 package com.mycompany.urbansoul.models;
 
 import jakarta.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -12,7 +13,7 @@ import java.util.List;
  * @author USER
  */
 @Entity
-public class Usuario {
+public class Usuario implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -53,11 +54,11 @@ public class Usuario {
         this.ventas = ventas;
     }
 
-    public Long getIdCliente() {
+    public Long getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdCliente(Long idUsuario) {
+    public void setIdUsuario(Long idUsuario) {
         this.idUsuario = idUsuario;
     }
 

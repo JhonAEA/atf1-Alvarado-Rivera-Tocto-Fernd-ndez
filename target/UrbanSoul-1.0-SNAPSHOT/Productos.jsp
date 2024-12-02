@@ -107,7 +107,7 @@
                                 <p class="card-text">S/. <%= producto.getPrecio() %></p>
                             </div>
                             <div class="card-footer text-center">
-                                <a href="#viewBuy" class="btn btn-primary">Comprar ahora</a>
+                                <a href="ComprarProducto.jsp?id=<%= producto.getIdProducto() %>" class="btn btn-primary">Comprar ahora</a>
                             </div>
                         </div>
                     </div>
@@ -118,12 +118,6 @@
                     %>
                 </div>
             </section>
-
-
-
-
-
-
         </main>
 
         <!-- Footer -->
@@ -151,6 +145,15 @@
                 </div>
             </div>
         </footer>
+
+        <%-- Verificar si hay un mensaje de éxito --%>
+        <% String mensajeExito = (String) request.getAttribute("mensajeExito"); %>
+        <% if (mensajeExito != null) { %>
+        <script type="text/javascript">
+        alert("<%= mensajeExito %>");
+        </script>
+        <% } %>
+
 
         <!-- Bootstrap JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
