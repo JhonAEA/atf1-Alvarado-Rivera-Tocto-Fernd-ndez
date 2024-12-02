@@ -5,7 +5,7 @@
 package com.mycompany.urbansoul.servlets;
 
 import com.mycompany.urbansoul.models.Producto;
-import com.mycompany.urbansoul.models.controladores.ControladorProducto;
+import com.mycompany.urbansoul.models.controladores.ProductoDAO;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 import jakarta.servlet.ServletException;
@@ -23,13 +23,13 @@ import java.io.IOException;
 public class SvCambiarActivo extends HttpServlet {
 
     private EntityManagerFactory emf;
-    private ControladorProducto control;
+    private ProductoDAO control;
 
     @Override
     public void init() throws ServletException {
         // Inicializa el EntityManagerFactory una sola vez
         emf = Persistence.createEntityManagerFactory("UrbanSoulPU");
-        control = new ControladorProducto(emf);
+        control = new ProductoDAO(emf);
     }
 
     @Override

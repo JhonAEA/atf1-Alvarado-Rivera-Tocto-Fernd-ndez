@@ -15,11 +15,11 @@ import java.util.List;
  *
  * @author USER
  */
-public class ControladorUsuario {
+public class UsuarioDAO {
 
     private UsuarioJpaController usuJpa;
 
-    public ControladorUsuario(EntityManagerFactory emf) {
+    public UsuarioDAO(EntityManagerFactory emf) {
         this.usuJpa = new UsuarioJpaController(emf);
     }
 

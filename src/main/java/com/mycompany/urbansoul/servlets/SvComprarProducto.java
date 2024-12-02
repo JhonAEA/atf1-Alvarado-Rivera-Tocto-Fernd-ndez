@@ -8,10 +8,10 @@ import com.mycompany.urbansoul.models.DetalleVenta;
 import com.mycompany.urbansoul.models.Producto;
 import com.mycompany.urbansoul.models.Usuario;
 import com.mycompany.urbansoul.models.Venta;
-import com.mycompany.urbansoul.models.controladores.ControladorDetalleVenta;
-import com.mycompany.urbansoul.models.controladores.ControladorProducto;
-import com.mycompany.urbansoul.models.controladores.ControladorUsuario;
-import com.mycompany.urbansoul.models.controladores.ControladorVenta;
+import com.mycompany.urbansoul.models.controladores.DetalleVentaDAO;
+import com.mycompany.urbansoul.models.controladores.ProductoDAO;
+import com.mycompany.urbansoul.models.controladores.UsuarioDAO;
+import com.mycompany.urbansoul.models.controladores.VentaDAO;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
@@ -30,20 +30,20 @@ import java.util.List;
 public class SvComprarProducto extends HttpServlet {
 
     private EntityManagerFactory emf;
-    private ControladorProducto controlPro;
-    private ControladorUsuario controlUsu;
-    private ControladorVenta controlVen;
-    private ControladorDetalleVenta controlDet;
+    private ProductoDAO controlPro;
+    private UsuarioDAO controlUsu;
+    private VentaDAO controlVen;
+    private DetalleVentaDAO controlDet;
 
     @Override
     public void init() throws ServletException {
         super.init();
         // Inicializar EntityManagerFactory
         emf = Persistence.createEntityManagerFactory("UrbanSoulPU");
-        controlUsu = new ControladorUsuario(emf);
-        controlVen = new ControladorVenta(emf);
-        controlDet = new ControladorDetalleVenta(emf);
-        controlPro = new ControladorProducto(emf);
+        controlUsu = new UsuarioDAO(emf);
+        controlVen = new VentaDAO(emf);
+        controlDet = new DetalleVentaDAO(emf);
+        controlPro = new ProductoDAO(emf);
     }
 
     @Override
@@ -52,7 +52,7 @@ public class SvComprarProducto extends HttpServlet {
         try {
             // Obtener todas las ventas desde el controlador
             if (controlVen == null) {
-                controlVen = new ControladorVenta(emf);  // Asegúrate de que el controlador esté inicializado
+                controlVen = new VentaDAO(emf);  // Asegúrate de que el controlador esté inicializado
             }
             
             List<Venta> listaVentas = controlVen.traerVentas();  // Método que obtiene todas las ventas
@@ -86,13 +86,13 @@ public class SvComprarProducto extends HttpServlet {
 
             // Instanciar controladores si no están inicializados
             if (controlUsu == null) {
-                controlUsu = new ControladorUsuario(emf);
+                controlUsu = new UsuarioDAO(emf);
             }
             if (controlVen == null) {
-                controlVen = new ControladorVenta(emf);
+                controlVen = new VentaDAO(emf);
             }
             if (controlDet == null) {
-                controlDet = new ControladorDetalleVenta(emf);
+                controlDet = new DetalleVentaDAO(emf);
             }
 
             // Verificar si el usuario existe por su email

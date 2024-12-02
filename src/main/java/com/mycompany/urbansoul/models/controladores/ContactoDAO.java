@@ -5,11 +5,11 @@ import com.mycompany.urbansoul.persistencia.ContactoJpaController;
 import jakarta.persistence.EntityManagerFactory;
 import java.util.List;
 
-public class ControladorContacto {
+public class ContactoDAO {
     
     private ContactoJpaController contacJpa;
     
-    public ControladorContacto(EntityManagerFactory emf) {
+    public ContactoDAO(EntityManagerFactory emf) {
         this.contacJpa = new ContactoJpaController(emf);
     }
     

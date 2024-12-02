@@ -6,11 +6,11 @@ import com.mycompany.urbansoul.persistencia.exceptions.NonexistentEntityExceptio
 import jakarta.persistence.EntityManagerFactory;
 import java.util.List;
 
-public class ControladorProducto {
+public class ProductoDAO {
 
     private ProductoJpaController producJpa;
 
-    public ControladorProducto(EntityManagerFactory emf) {
+    public ProductoDAO(EntityManagerFactory emf) {
         this.producJpa = new ProductoJpaController(emf);
     }
 
