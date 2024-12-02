@@ -42,37 +42,7 @@ public class SvProducto extends HttpServlet {
         sesion.setAttribute("listaProductos", listaProductos);
 
         // Redirigir a la página de productos
-        response.sendRedirect("Admin/Productos.jsp");
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
-        // Obtener los datos del formulario
-        String nombre = request.getParameter("nombre");
-        String descripcion = request.getParameter("descripcion");
-        String talla = request.getParameter("talla");
-        String color = request.getParameter("color");
-        double precio = Double.parseDouble(request.getParameter("precio"));
-        String url = request.getParameter("urlImagen");
-
-        // Crear un nuevo producto
-        Producto producto = new Producto();
-        producto.setNombre(nombre);
-        producto.setDescripcion(descripcion);
-        producto.setTalla(talla);
-        producto.setColor(color);
-        producto.setPrecio(precio);
-        producto.setUrlImagen(url);
-        producto.setActivo(1);
-        
-
-        // Guardar el producto en la base de datos
-        control.crearProducto(producto);
-
-        // Redirigir a la página de productos
-        response.sendRedirect("Admin/Productos.jsp");
+        response.sendRedirect("Productos.jsp");
     }
 
     @Override

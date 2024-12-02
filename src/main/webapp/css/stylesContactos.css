@@ -16,7 +16,7 @@ header {
     width: 100%;
     border-bottom: 1px solid;
     padding: 5px;
-    position: sticky;
+    position: static;
     top: 0;
 }
 

@@ -21,18 +21,34 @@
               rel="stylesheet" 
               integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
               crossorigin="anonymous">
+
+        <style>
+            html, body {
+                height: 100%;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            main {
+                flex: 1; /* Toma el espacio restante entre el header y el footer */
+            }
+        </style>
+
     </head>
 
     <body style="background-color: #F6F4F3">
+
+
         <!-- Header -->
-        <header>
+        <header style="position: static;">
             <div class="header-logo">
                 <img src="images/logos/logoUrbanSoul.png" alt="Urban Soul">
             </div>
             <nav class="nav-menu">
                 <a href="index.jsp">Inicio</a>
                 <a href="Nosotros.jsp">Nosotros</a>
-                <a href="#">Productos</a>
+                <a href="SvProducto">Productos</a>
                 <a href="Contactos.jsp">Contacto</a>
             </nav>
         </header>
@@ -51,20 +67,41 @@
             <!-- Productos -->
             <section class="productos">
                 <div class="row g-4">
-                    <!-- Producto 1 -->
                     <%
                         // Obtener la lista de productos desde la sesión
                         List<Producto> listaProductos = (List<Producto>) request.getSession().getAttribute("listaProductos");
-                        int cont = 1; // Contador para enumerar los productos
-                        if (listaProductos == null || listaProductos.isEmpty()) {
-        
-                        } else {
-                        
-                        for (Producto producto : listaProductos) {
+                        boolean hayProductosActivos = false;
+
+                        if (listaProductos != null && !listaProductos.isEmpty()) {
+                            // Comprobar si hay al menos un producto activo
+                            for (Producto producto : listaProductos) {
+                                if (producto.getActivo() == 1) {
+                                    hayProductosActivos = true;
+                                    break;
+                                }
+                            }
+                        }
+
+                        if (listaProductos == null || listaProductos.isEmpty() || !hayProductosActivos) {
                     %>
+                    <!-- Mensaje cuando no hay productos activos -->
+                    <div class="col-12">
+                        <div class="alert alert-warning text-center py-5">
+                            <h4>No hay productos disponibles en este momento</h4>
+                            <p class="mb-0">Por favor, vuelva más tarde para ver nuestros productos.</p>
+                        </div>
+                    </div>
+                    <%
+                        }
+
+                        if (listaProductos != null && !listaProductos.isEmpty()) {
+                            for (Producto producto : listaProductos) {
+                                if (producto.getActivo() == 1) { // Mostrar solo productos activos
+                    %>
+                    <!-- Producto activo -->
                     <div class="col-md-4">
                         <div class="card h-100">
-                            <img src="<%= producto.getUrlImagen() %>" class="card-img-top img-fixed img-fluid" alt="Foto Producto 1" style="height: 250px; object-fit: cover">
+                            <img src="<%= producto.getUrlImagen() %>" class="card-img-top img-fixed img-fluid" alt="Foto Producto" style="height: 250px; object-fit: cover">
                             <div class="card-body text-center">
                                 <h5 class="card-title"><%= producto.getNombre() %></h5>
                                 <p class="card-text">S/. <%= producto.getPrecio() %></p>
@@ -74,13 +111,16 @@
                             </div>
                         </div>
                     </div>
-                    <%  
-                        } 
-                    }
+                    <%
+                                }
+                            }
+                        }
                     %>
-                    <!-- Agrega más productos aquí si es necesario -->
                 </div>
             </section>
+
+
+
 
 
 

@@ -20,17 +20,29 @@
               integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
               crossorigin="anonymous">
         <link rel="stylesheet" href="css/stylesInicio.css" />
+        <style>
+            html, body {
+                height: 100%;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            main {
+                flex: 1; /* Toma el espacio restante entre el header y el footer */
+            }
+        </style>
     </head>
 
     <body>
-        <header>
+        <header style="position: static;">
             <div class="header-logo">
                 <img src="images/logos/logoUrbanSoul.png" alt="Urban Soul">
             </div>
             <nav class="nav-menu">
                 <a href="#">Inicio</a>
                 <a href="Nosotros.jsp">Nosotros</a>
-                <a href="Productos.jsp">Productos</a>
+                <a href="SvProducto">Productos</a>
                 <a href="Contactos.jsp">Contacto</a>
             </nav>
         </header>

@@ -26,10 +26,10 @@
                             <a class="nav-link" aria-current="page" href="../index.jsp"">Pagina Web</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../SvProducto">Productos</a>
+                            <a class="nav-link" href="../SvProductoAdmin">Productos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Contactos.jsp">Contactos</a>
+                            <a class="nav-link" href="../SvContacto">Contactos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="#">Ventas</a>
@@ -40,6 +40,32 @@
         </nav>
 
         <br>
+
+        <div class="container-md">
+           
+            <h4 class="text-center">Ventas Realizadas</h4>
+            <table class="table align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">ID Contacto</th>
+                        <th scope="col">Nombre del contacto</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Asunto</th>
+                        <th scope="col">Mensaje</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>a</td>
+                        <td>a</td>
+                        <td>a</td>
+                        <td>a</td>
+                        <td>a</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
     </body>
 </html>

@@ -20,10 +20,10 @@
                             <a class="nav-link" aria-current="page" href="../index.jsp">Pagina Web</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../SvProducto">Productos</a>
+                            <a class="nav-link" href="../SvProductoAdmin">Productos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Contactos.jsp">Contactos</a>
+                            <a class="nav-link" href="../SvContacto">Contactos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="Ventas.jsp">Ventas</a>
@@ -60,7 +60,7 @@
                             </p>
                         </div>
                         <div class="card-footer text-center">
-                            <a href="../SvProducto" class="btn btn-primary">Ir a Productos</a>
+                            <a href="../SvProductoAdmin" class="btn btn-primary">Ir a Productos</a>
                         </div>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
                             </p>
                         </div>
                         <div class="card-footer text-center">
-                            <a href="Contactos.jsp" class="btn btn-primary">Ver Contactos</a>
+                            <a href="../SvContacto" class="btn btn-primary">Ver Contactos</a>
                         </div>
                     </div>
                 </div>

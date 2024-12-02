@@ -39,7 +39,7 @@ public class ControladorProducto {
             throw new Exception("Error al actualizar el producto: " + e.getMessage());
         }
     }
-
+    
     // Delete
     public void eliminarProducto(Long id) throws Exception {
         try {

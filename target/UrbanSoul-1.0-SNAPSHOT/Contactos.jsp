@@ -14,18 +14,30 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <link rel="stylesheet" href="css/stylesContactos.css">
+        <style>
+            html, body {
+                height: 100%;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            main {
+                flex: 1; /* Toma el espacio restante entre el header y el footer */
+            }
+        </style>
     </head>
 
     <body style="background-color: #F6F4F3">
         <!-- Header -->
-        <header>
+        <header style="position: static;">
             <div class="header-logo">
                 <img src="images/logos/logoUrbanSoul.png" alt="Urban Soul">
             </div>
             <nav class="nav-menu">
                 <a href="index.jsp">Inicio</a>
                 <a href="Nosotros.jsp">Nosotros</a>
-                <a href="Productos.jsp">Productos</a>
+                <a href="SvProducto">Productos</a>
                 <a href="#">Contacto</a>
             </nav>
         </header>
@@ -35,6 +47,26 @@
             <div class="container">
                 <h1 class="text-center mb-4">¿Cómo contactarnos?</h1>
                 <div class="row">
+
+                    <!-- Ver solicitudes -->
+                    <div class="col-lg-6 mt-4 mt-lg-0">
+                        <p class="text-justify">
+                            En Urban Soul, tu opinión es muy importante para nosotros. Si tienes alguna pregunta, sugerencia o reclamo, no dudes en ponerte en contacto a través de los siguientes medios:
+                        </p>
+                        <ul class="list-unstyled">
+                            <li><strong>Correo electrónico:</strong> Puedes enviarnos un mensaje a <a href="mailto:contacto@urbansoul.com">contacto@urbansoul.com</a> para cualquier consulta relacionada con productos, pedidos o servicios.</li>
+                            <li><strong>Redes sociales:</strong> Estamos activos en nuestras redes sociales, como Facebook, Instagram y WhatsApp. Encuentra nuestros enlaces en la parte inferior de la página.</li>
+                            <li><strong>Formulario de contacto:</strong> Si prefieres hacerlo de manera más directa, puedes completar nuestro formulario de contacto, como lo estás haciendo ahora, para que nuestro equipo te responda a la brevedad.</li>
+                        </ul>
+                        <h6 class="mt-4">¿Por qué es importante contactarnos?</h6>
+                        <p class="text-justify">
+                            La comunicación con nuestros clientes es clave para ofrecer un servicio excepcional. Al recibir tus comentarios, sugerencias o reclamos, podemos mejorar nuestros productos y la experiencia de compra. Además, esto nos permite mantenernos conectados y comprometidos con nuestra comunidad, lo que nos motiva a seguir ofreciendo lo mejor de nosotros.
+                        </p>
+                        <p class="text-justify">
+                            Nos interesa saber tu opinión para seguir creciendo y brindar un servicio más cercano y adaptado a tus necesidades. ¡Tu voz hace la diferencia!
+                        </p>
+                    </div>
+
                     <!-- Formulario -->
                     <div class="col-lg-6 ">
                         <form action="SvContacto" method="POST" class="p-4 bg-white rounded shadow-sm" style="background-color: #F6F4F3">
@@ -62,24 +94,7 @@
                         </form>
                     </div>
 
-                    <!-- Ver solicitudes -->
-                    <div class="col-lg-6 mt-4 mt-lg-0">
-                        <p class="text-justify">
-                            En Urban Soul, tu opinión es muy importante para nosotros. Si tienes alguna pregunta, sugerencia o reclamo, no dudes en ponerte en contacto a través de los siguientes medios:
-                        </p>
-                        <ul class="list-unstyled">
-                            <li><strong>Correo electrónico:</strong> Puedes enviarnos un mensaje a <a href="mailto:contacto@urbansoul.com">contacto@urbansoul.com</a> para cualquier consulta relacionada con productos, pedidos o servicios.</li>
-                            <li><strong>Redes sociales:</strong> Estamos activos en nuestras redes sociales, como Facebook, Instagram y WhatsApp. Encuentra nuestros enlaces en la parte inferior de la página.</li>
-                            <li><strong>Formulario de contacto:</strong> Si prefieres hacerlo de manera más directa, puedes completar nuestro formulario de contacto, como lo estás haciendo ahora, para que nuestro equipo te responda a la brevedad.</li>
-                        </ul>
-                        <h6 class="mt-4">¿Por qué es importante contactarnos?</h6>
-                        <p class="text-justify">
-                            La comunicación con nuestros clientes es clave para ofrecer un servicio excepcional. Al recibir tus comentarios, sugerencias o reclamos, podemos mejorar nuestros productos y la experiencia de compra. Además, esto nos permite mantenernos conectados y comprometidos con nuestra comunidad, lo que nos motiva a seguir ofreciendo lo mejor de nosotros.
-                        </p>
-                        <p class="text-justify">
-                            Nos interesa saber tu opinión para seguir creciendo y brindar un servicio más cercano y adaptado a tus necesidades. ¡Tu voz hace la diferencia!
-                        </p>
-                    </div>
+
                 </div>
             </div>
         </main>

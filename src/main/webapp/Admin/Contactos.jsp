@@ -27,10 +27,10 @@
                             <a class="nav-link" aria-current="page" href="../index.jsp">Pagina Web</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../SvProducto">Productos</a>
+                            <a class="nav-link" href="../SvProductoAdmin">Productos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Contactos</a>
+                            <a class="nav-link active" href="../SvContacto">Contactos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="Ventas.jsp">Ventas</a>
@@ -41,10 +41,15 @@
         </nav>
 
         <br>
-        
+
         <!-- Tabla Contactos-->
 
         <div class="container-md">
+            <% 
+                List<Contacto> listaContactos = (List) request.getSession().getAttribute("listaContactos");
+                if (listaContactos != null && !listaContactos.isEmpty()) { 
+            %>
+            <h4 class="text-center">Lista de Contactos</h4>
             <table class="table align-middle">
                 <thead class="table-dark">
                     <tr>
@@ -55,59 +60,27 @@
                         <th scope="col">Mensaje</th>
                     </tr>
                 </thead>
+
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Jhon</td>
-                        <td>jhon@example.com</td>
-                        <td>Reclamo</td>
-                        <td>Mensaje de Reclamo</td>
-                    </tr>
-                </tbody>
-            </table> 
-        </div>
-        
-        <!-- Ver solicitudes -->
-                    <div class="col-lg-6 mt-4 mt-lg-0">
-                        <form action="../SvContacto" method="GET" class="p-4 bg-white rounded shadow-sm">
-                            <button type="submit" name="Ver" class="btn btn-secondary w-100 mb-3">Ver solicitudes de contacto</button>
-                            <% 
-                                List<Contacto> listaContactos = (List) request.getSession().getAttribute("listaContactos");
-                                if (listaContactos != null && !listaContactos.isEmpty()) { 
-                            %>
-                            <h5 class="text-center">Lista de Contactos</h5>
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Nombre</th>
-                                        <th>E-mail</th>
-                                        <th>Asunto</th>
-                                        <th>Mensaje</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <%
+                    <%
                                         int cont = 1;
                                         for (Contacto contacto : listaContactos) {
-                                    %>
-                                    <tr>
-                                        <td><%= cont++ %></td>
-                                        <td><%= contacto.getNombre() %></td>
-                                        <td><%= contacto.getEmail() %></td>
-                                        <td><%= contacto.getAsunto() %></td>
-                                        <td><%= contacto.getMensaje() %></td>
-                                    </tr>
-                                    <% } %>
-                                </tbody>
-                            </table>
-                            <% } else { %>
-                            <p class="text-center text-muted">No hay solicitudes de contacto registradas.</p>
-                            <% } %>
-                        </form>
-                    </div>
+                    %>
+                    <tr>
+                        <td><%= contacto.getIdContacto() %></td>
+                        <td><%= contacto.getNombre() %></td>
+                        <td><%= contacto.getEmail() %></td>
+                        <td><%= contacto.getAsunto() %></td>
+                        <td><%= contacto.getMensaje() %></td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table> 
+            <% } else { %>
+            <p class="text-center text-muted">No hay solicitudes de contacto registradas.</p>
+            <% } %>
+        </div>
 
-        <br>
 
     </body>
 </html>
